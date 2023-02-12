@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main() {
+
+    char ch[50];
+    int i=0,l=0,low=0,up=0;
+
+    printf ("Enter a string: ");
+    scanf ("%[^\n]%*c", ch);
+
+    while(ch[i]!=0){
+        if(ch[i]>='A' && ch[i]<='Z'){
+            up++;
+        }
+        else if(ch[i]>='a' && ch[i]<='z'){
+            low++;
+        }
+        i++;
+    }
+
+    printf ("\ntotal lower case letters: %d", low);
+    printf ("\ntotal upper case letters: %d", up);
+
+    return 0;
+}
