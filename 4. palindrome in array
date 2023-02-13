@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int main() {
+
+    int arr[5],i,n,sum=0,rev=0,rem=0;
+
+    printf ("Enter the array (5 elements): ");
+    for (i=0 ; i<5 ; i++)
+        scanf ("%d", &arr[i]);
+
+    for (i=0 ; i<5 ; i++){
+        n = arr[i];
+        while(n!=0){
+            rem = n%10;
+            rev = rev*10 + rem;
+            n = n/10;
+        }
+        if (rev == arr[i]){
+            printf ("\n\nelement [%d]- %d is a palindrome\n",i,arr[i]);
+            sum = sum + arr[i];
+        }
+        rev = 0;
+        rem = 0;
+    }
+
+    printf ("\nsum of all the palindromic numbers in the array: %d\n\n", sum);
+    return 0;
+}
