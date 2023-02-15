@@ -1,1 +1,40 @@
+#include<stdio.h>
+
+int main() {
+
+    int row,col,i,j,zero_count=0,nonzero_count=0;
+
+    printf ("Enter row number: ");
+    scanf ("%d", &row);
+
+    printf ("Enter column number: ");
+    scanf ("%d", &col);
+
+    int arr[row][col];
+
+    printf ("Input the array elements: ");
+    for (i=0 ; i<row ; i++){
+        for(j=0 ; j<col ; j++){
+            scanf ("%d", &arr[i][j]);
+        }
+    }
+
+    for (i=0 ; i<row ; i++){
+        for(j=0 ; j<col ; j++){
+            if(arr[i][j] == 0)
+                zero_count++;
+            else
+                nonzero_count++;
+        }
+    }
+
+    if(nonzero_count > zero_count)
+        printf("\nIt's a dense matrix\n");
+    else if (zero_count > ((row*col)/2))
+        printf("\nIt's a sparse matrix\n");
+    else
+        printf("\nIt's neither a sparse matrix nor a dense matrix.\n");
+
+    return 0;
+}
 
